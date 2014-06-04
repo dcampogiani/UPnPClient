@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="/Users/danielecampogiani/Developing/Android/UPnPClient/app/build/pre-dexed/debug/ion-1.2.4-b2957ad975bf6b3e60394ad2d90fb30066c5e6bd.jar"
+        jar="/Users/danielecampogiani/.gradle/caches/modules-2/files-2.1/com.koushikdutta.ion/ion/1.2.4/776baf5cac8eb4145dc0901254122cf956a784e3/ion-1.2.4.jar"
+        jumboMode="false"
+        revision="19.0.3"
+        sha1="776baf5cac8eb4145dc0901254122cf956a784e3"/>
+    <item
+        dex="/Users/danielecampogiani/Developing/Android/UPnPClient/app/build/pre-dexed/debug/gson-2.2.4-8934460e461a6d4b4da71d6457ce766247bf2314.jar"
+        jar="/Users/danielecampogiani/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.2.4/a60a5e993c98c864010053cb901b7eab25306568/gson-2.2.4.jar"
+        jumboMode="false"
+        revision="19.0.3"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568"/>
+    <item
+        dex="/Users/danielecampogiani/Developing/Android/UPnPClient/app/build/pre-dexed/debug/classes-58446890c1d922dddc8dcbb45104c36cf8f1985e.jar"
+        jar="/Users/danielecampogiani/Developing/Android/UPnPClient/build/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        jumboMode="false"
+        revision="19.0.3"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="/Users/danielecampogiani/Developing/Android/UPnPClient/app/build/pre-dexed/debug/androidasync-1.2.4-fa23e056e43a2f47f55f7afe227ce9a88a71c27c.jar"
+        jar="/Users/danielecampogiani/.gradle/caches/modules-2/files-2.1/com.koushikdutta.async/androidasync/1.2.4/8dc7111050ee5f13a54b1206d47fee856159b2aa/androidasync-1.2.4.jar"
+        jumboMode="false"
+        revision="19.0.3"
+        sha1="8dc7111050ee5f13a54b1206d47fee856159b2aa"/>
+    <item
+        dex="/Users/danielecampogiani/Developing/Android/UPnPClient/app/build/pre-dexed/debug/support-v4-19.1.0-1188904d1c6beee77a52c512c4cd3f6b8eb48158.jar"
+        jar="/usr/local/Cellar/android-sdk/22.6.2/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="19.0.3"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="/Users/danielecampogiani/Developing/Android/UPnPClient/app/build/pre-dexed/debug/kxml2-2.3.0-85842be9716af14d563e6abdec24a4b71bf28872.jar"
+        jar="/Users/danielecampogiani/Developing/Android/UPnPClient/app/libs/kxml2-2.3.0.jar"
+        jumboMode="false"
+        revision="19.0.3"
+        sha1="ccbc77a5fd907ef863c29f3596c6f54ffa4e9442"/>
+    <item
+        dex="/Users/danielecampogiani/Developing/Android/UPnPClient/app/build/pre-dexed/debug/cyberlink-core-2.1.0-36e5065331ab7a69d928082c432c12049429a5c5.jar"
+        jar="/Users/danielecampogiani/Developing/Android/UPnPClient/app/libs/cyberlink-core-2.1.0.jar"
+        jumboMode="false"
+        revision="19.0.3"
+        sha1="fac87a2a660f4346f389f6a9cdabf91f81b1faac"/>
+
+</pre-dex-items>
