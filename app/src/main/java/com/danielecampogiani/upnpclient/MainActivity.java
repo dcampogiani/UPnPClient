@@ -34,10 +34,13 @@ public class MainActivity extends ListActivity {
 
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        controlPoint.stop();
+    }
 
-
-
-private class SearchDevicesTask extends AsyncTask<Void,Void,List<String>>{
+    private class SearchDevicesTask extends AsyncTask<Void, Void, List<String>> {
 
 
     @Override
@@ -46,7 +49,7 @@ private class SearchDevicesTask extends AsyncTask<Void,Void,List<String>>{
 
         controlPoint.start();
 
-        while (myMac==null){
+        while (myMac == null) {
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
@@ -55,8 +58,8 @@ private class SearchDevicesTask extends AsyncTask<Void,Void,List<String>>{
 
             DeviceList rootDevices = controlPoint.getDeviceList();
             int numDevices = rootDevices.size();
-            if (numDevices>0){
-                for (int i =0;i<numDevices;i++){
+            if (numDevices > 0) {
+                for (int i = 0; i < numDevices; i++) {
 
                     if (rootDevices.getDevice(i).getFriendlyName().equals("Macbook Pro")) { //dovrei fare controllo con tipo non con nome
                         myMac = rootDevices.getDevice(i);
@@ -71,24 +74,24 @@ private class SearchDevicesTask extends AsyncTask<Void,Void,List<String>>{
 
         ServiceList services = myMac.getServiceList();
 
-        for (int i =0;i<services.size();i++){
+        for (int i = 0; i < services.size(); i++) {
             Service service = services.getService(i);
-            if(service.getServiceType().equals("urn:schemas-upnp-org:service:getimages:1")) {
+            if (service.getServiceType().equals("urn:schemas-upnp-org:service:getimages:1")) {
 
                 Action getImagesAction = service.getAction("GetImages");
 
-                if (getImagesAction.postControlAction()){
+                if (getImagesAction.postControlAction()) {
                     Argument arg = getImagesAction.getArgument("ReturnText");
                     String value = arg.getValue();
                     String[] resultArray = value.split(";");
                     ArrayList<String> result = new ArrayList<String>();
 
-                    String ip = myMac.getURLBase().substring(myMac.getURLBase().indexOf("http://")+7);
-                    ip = ip.substring(0,ip.indexOf(":"));
+                    String ip = myMac.getURLBase().substring(myMac.getURLBase().indexOf("http://") + 7);
+                    ip = ip.substring(0, ip.indexOf(":"));  //brutto ma funziona
 
                     result.add(ip);
 
-                    for (String current: resultArray)
+                    for (String current : resultArray)
                         result.add(current);
 
                     return result;
@@ -100,28 +103,22 @@ private class SearchDevicesTask extends AsyncTask<Void,Void,List<String>>{
         return null;
     }
 
-    @Override
-    protected void onPostExecute(List<String> strings) {
+        @Override
+        protected void onPostExecute(List<String> strings) {
 
 
-        String ip = strings.get(0);
-        strings.remove(0);
+            String ip = strings.get(0);
+            strings.remove(0);
 
-        for (String current: strings){
-            String currentUrl = "http://"+ip+":9000"+"/"+current;
-            Picture picture = new Picture(currentUrl);
-            pictures.add(picture);
+            for (String current : strings) {
+                String currentUrl = "http://" + ip + ":9000" + "/" + current; //le immagini il server HTTP le "serve" sulla porta 9000
+                Picture picture = new Picture(currentUrl);
+                pictures.add(picture);
+            }
+
+            aa.notifyDataSetChanged();
+
         }
-
-        aa.notifyDataSetChanged();
-
-    }
-}
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        controlPoint.stop();
     }
 }
 
